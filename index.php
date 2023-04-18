@@ -40,14 +40,23 @@ $hotels = [
 
     ];
 
-    foreach ($hotels as $hotel){
-    $nomeHotel = $hotel ['name']; 
-    $descrizioneHotel = $hotel ['description'];
-    $parcheggioHotel = $hotel['parking'];
-    $votoHotel = $hotel['vote'];
-    $distanzaHotel = $hotel['distance_to_center'];
-    echo " $nomeHotel ,'<br>'  $descrizioneHotel,'<br>'  $parcheggioHotel,'<br> voto:' $votoHotel,'<br> distanza dal centro:' $distanzaHotel,'<br>'";
+    echo("<table class='table'>");
+    foreach ($hotels[0] as $key => $hotel){
+        echo('<th> '.$key .'</th>');
     }
+    //hotel elencati
+    foreach($hotels as $hotel) {
+        //valori
+        echo('<tr>');
+        foreach($hotel as $name) {
+            
+            echo('<td> '.$name.'</td>');
+        }
+        echo("</tr>\n");
+    }
+    echo('</table>');
+
+
 
 
 ?>
@@ -59,6 +68,7 @@ $hotels = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>

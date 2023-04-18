@@ -40,9 +40,15 @@ $hotels = [
 
     ];
 
-    foreach ($hotels in $hotel){
-     echo $hotel 
+    foreach ($hotels as $hotel){
+    $nomeHotel = $hotel ['name']; 
+    $descrizioneHotel = $hotel ['description'];
+    $parcheggioHotel = $hotel['parking'];
+    $votoHotel = $hotel['vote'];
+    $distanzaHotel = $hotel['distance_to_center'];
+    echo " $nomeHotel ,'<br>'  $descrizioneHotel,'<br>'  $parcheggioHotel,'<br> voto:' $votoHotel,'<br> distanza dal centro:' $distanzaHotel,'<br>'";
     }
+
 
 ?>
 
@@ -56,6 +62,6 @@ $hotels = [
     <title>Document</title>
 </head>
 <body>
-    hytdytdytdytdytd
+  
 </body>
 </html>

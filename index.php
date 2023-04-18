@@ -40,21 +40,30 @@ $hotels = [
 
     ];
 
-    echo("<table class='table'>");
-    foreach ($hotels[0] as $key => $hotel){
-        echo('<th> '.$key .'</th>');
-    }
-    //hotel elencati
-    foreach($hotels as $hotel) {
-        //valori
-        echo('<tr>');
-        foreach($hotel as $name) {
-            
-            echo('<td> '.$name.'</td>');
+        echo("<table class='table'>");
+        foreach ($hotels[0] as $key => $hotel){
+            if ( $key ==  'distance_to_center' ){
+                $key = 'Distanza dal Centro';
+            }
+            echo('<th> '.ucfirst($key) .'</th>');
         }
-        echo("</tr>\n");
-    }
-    echo('</table>');
+                //hotel elencati
+        foreach($hotels as $hotel) {
+            if($hotel['parking']==true)
+            {
+                $hotel['parking']='si abbiamo il parcheggio';
+            }
+            else{
+                $hotel['parking']='mi dispiace non abbiamo il parcheggio';
+            }
+                    //valori
+         echo('<tr>');
+            foreach($hotel as $name) {
+                    echo('<td> '.$name.'</td>');
+            }
+            echo("</tr>\n");
+        }
+        echo('</table>');
 
 
 
